@@ -62,7 +62,7 @@
 
 
     function colorFunction(){
-        let whyHere = prompt("Do you need are you seriously hurt? yes or no");
+        let whyHere = prompt("Do you need are you seriously hurt? yes or no. If yes... the entire page will be red and you wont be able to read much");
         
         if (whyHere == "yes"){
             alert("CALL 911");
