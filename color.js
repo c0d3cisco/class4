@@ -1,4 +1,5 @@
 
+function colorFunction(){
 let whyHere = prompt("Do you need are you seriously hurt? yes or no");
 
 if (whyHere == "yes"){
@@ -14,6 +15,9 @@ if (whyHere == "yes"){
     }
 } else{
     alert("Refresh the page and type in answer correctly and you'll get a surprise")
-
+    
     document.write("<style> body {background-color: rgb(0, 0, 0);} */ </style>")
 }
+}
+
+colorFunction();
