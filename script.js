@@ -124,22 +124,6 @@ function siteRanking() {
                 alert(rank + " stars! Thank you!");
             }
             
-            // let rank2 = rank;
-
-            // while (w == 1) {
-            //     console.log(rank + " -1")
-            //     if (rank2 == 1) { alert(i + " star plus...") };
-            //     if (rank2 > 1) {
-            //         for (let i = 2; i <= rank; i++) {
-
-            //             console.log(rank2 + " -3");
-            //             alert(i + " stars plus...");
-            //             rank2--;
-            //         }
-            //     }
-            //     console.log(rank2 + " -2");
-            // }
-            // if (rank2 == 1) { alert(i + " star!") }
         } else {
             alert("Hey! That is not a number...")
         }
