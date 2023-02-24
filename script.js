@@ -86,27 +86,32 @@ function colorFunction() {
 
 
 function siteRanking() {
-    let rank = prompt("Without looking at my site, what would you rank it? 1-5");
+    let rank = parseInt(prompt("Without looking at my site, what would you rank it? 1-5"));
     let y = 1;
     while (y == 1) {//{
-        console.log(y)
-        console.log(typeof rank);
-        let x = "";
-        for (let i = 1; i <= rank; i++) {
-            x = x + '<img class="header_pic" src="gold-star.png" alt="gold star">';
-        }
-        document.write('<article id="header_article">' + x + '</article>')
         if (rank < 1) {
             alert("With that answer, you won't see anything special.")
             y = 0;
         } else if (rank >= 1 && rank < 6) {
             alert("Thanks!")
+            forFunction(rank);
             y = 0;
         }
-        else {
-            alert("More than 5?! Oh wow, thank you!")
+        else{
+            alert("More than 5?! Oh wow, thank you! But I'll stop at 6 stars.")
+            rank = 6;
+            forFunction(rank);
             y = 0;
         }
 
     }
+}
+
+function forFunction(variable){
+    let x = "";
+    for (let i = 1; i <= variable; i++) {
+        x = x + '<img class="header_pic" src="gold-star.png" alt="gold star">';
+        alert(i);
+    }
+    document.write('<article id="header_article">' + x + '</article>');
 }
