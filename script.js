@@ -44,13 +44,13 @@ function getName() {
 
 function likeSnow() {
     let snowLike = "";
-    while ((snowLike != "YES!") && (snowLike != "No:(")) {
-        console.log((snowLike != "YES!") && (snowLike != "No:("));
-        snowLike = prompt("Do you like the snow? Type YES! or No:(");
+    while ((snowLike != "YES!") && (snowLike != "No, I prefer the beach")) {
+        //console.log((snowLike != "YES!") && (snowLike != "No:("));
+        snowLike = prompt("Do you like the snow? Type YES! or No, I prefer the beach");
         if ((snowLike == "YES!")) {
             alert("YAY!!! Enjoy this website!")
         }
-        else if (snowLike == "No:(") {
+        else if (snowLike == "No, I prefer the beach") {
             alert("Boo... okay. Well, try to enjoy this webiste.")
         }
         else if (snowLike == null || snowLike == "") {
@@ -70,7 +70,7 @@ function colorFunction() {
         alert("You can't have fun in the snow, so the entire screen will be red. Call 911!");
         document.write("<style> body {background-color: rgb(230, 19, 19); color: rgb(230, 19, 19);}  */ </style>")
     } else if (whyHere == "no") {
-        let boolean = confirm("Do NOT click Cancel");
+        let boolean = confirm("Do NOT click Cancel... you'll get a black background if you do. It might look cool");
         if (boolean == 1) {
             return
         }
@@ -78,7 +78,7 @@ function colorFunction() {
             document.write("<style> body {background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);}  */ </style>");
         }
     } else {
-        alert("Refresh the page and type in answer correctly and you'll get a surprise")
+        alert("Whoops! You typed that wrong. Hope you weren't trying to type 'yes'. Call 911 if so. Otherwise, refresh the page to type in the answer correctly to read the text of this page.")
 
         document.write("<style> body {background-color: rgb(0, 0, 0);} */ </style>")
     };
@@ -86,32 +86,82 @@ function colorFunction() {
 
 
 function siteRanking() {
-    let rank = parseInt(prompt("Without looking at my site, what would you rank it? 1-5"));
     let y = 1;
-    while (y == 1) {//{
-        if (rank < 1) {
-            alert("With that answer, you won't see anything special.")
-            y = 0;
-        } else if (rank >= 1 && rank < 6) {
-            alert("Thanks!")
-            forFunction(rank);
-            y = 0;
-        }
-        else{
-            alert("More than 5?! Oh wow, thank you! But I'll stop at 6 stars.")
-            rank = 6;
-            forFunction(rank);
-            y = 0;
-        }
+    while (y == 1) {
+        let rank = parseInt(prompt("Without looking at my site, what would you rank it? 1 - 5"));
+        // console.log(typeof rank)
+        // console.log(rank)
+        // console.log(typeof 5)
+        console.log(rank == NaN)
 
+        if (rank > -(Infinity)) { // why didnt rank !== NaN not work?
+            let rank2 = rank;
+            while (y == 1) {//{
+                if (rank2 < 1) {
+                    alert("With that answer, you won't see anything special.")
+                    y = 0;
+                } else if (rank2 >= 1 && rank < 6) {
+                    alert("Thanks!")
+                    forFunction(rank2);
+                    y = 0;
+                }
+                else {
+                    alert("More than 5?! Oh wow, thank you! 6 enough though.")
+                    rank = 6;
+                    forFunction(rank);
+                    y = 0;
+                }
+            }
+            for (let i = rank; i > 0; i--){
+                if(i>1){
+                    alert(i + " stars plus...");
+                } else{
+                    alert(i + " star")
+                }
+            }
+            rank = rank * (rank + 1) / 2;
+            if (rank > 1) {
+                alert(rank + " stars! Thank you!");
+            }
+            
+            // let rank2 = rank;
+
+            // while (w == 1) {
+            //     console.log(rank + " -1")
+            //     if (rank2 == 1) { alert(i + " star plus...") };
+            //     if (rank2 > 1) {
+            //         for (let i = 2; i <= rank; i++) {
+
+            //             console.log(rank2 + " -3");
+            //             alert(i + " stars plus...");
+            //             rank2--;
+            //         }
+            //     }
+            //     console.log(rank2 + " -2");
+            // }
+            // if (rank2 == 1) { alert(i + " star!") }
+        } else {
+            alert("Hey! That is not a number...")
+        }
     }
 }
 
-function forFunction(variable){
+
+
+function forFunction(variable) {
     let x = "";
     for (let i = 1; i <= variable; i++) {
-        x = x + '<img class="header_pic" src="gold-star.png" alt="gold star">';
-        alert(i);
+        x += '<img class="header_pic" src="gold-star.png" alt="gold star">';
+        //alert(i);
+        document.write('<article id="header_article">' + x + '</article>');
     }
-    document.write('<article id="header_article">' + x + '</article>');
 }
+
+// function forFunction(variable){
+//     let x = "";
+//     for (let i = 1; i <= variable; i++) {
+//         x = x + '<img class="header_pic" src="gold-star.png" alt="gold star">';
+//         alert(i);
+//     }
+//     document.write('<header><article id="header_article">' + x + '</article></header>');
+// }
